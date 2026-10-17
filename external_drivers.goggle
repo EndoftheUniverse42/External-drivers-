@@ -1,0 +1,72 @@
+! name: Health External Drivers
+! description: Surfaces results only from a curated list of multilateral bodies, government health departments, evidence and HTA organisations, and commercial library suppliers
+! public: false
+! author: H
+!
+! External-environment strand for the NHS librarianship project. None of this is
+! UK professional evidence; it is the external scan that contextualises it.
+!
+! INCLUSION RULE: health systems with a nationally organised health knowledge or
+! library function, plus the multilateral, evidence and commercial actors whose
+! decisions shape what such a service can do.
+!
+! Tier is recovered by joining the returned hostname back to
+! external_drivers_domains_v1.csv. Tier 4 (commercial) is a vendor-stated signal
+! and must never enter an evidence table as a finding.
+!
+! Domain list v1.0 (2026-10-17), 44 entries; 11 verified live, 33 high-confidence.
+!
+$discard
+!
+! ---- 1 Multilateral and intergovernmental ----
+$boost,site=who.int
+$boost,site=iris.who.int
+$boost,site=eurohealthobservatory.who.int
+$boost,site=healthobservatory.eu
+$boost,site=hspm.org
+$boost,site=oecd.org
+$boost,site=health.ec.europa.eu
+!
+! ---- 2 Government health departments ----
+$boost,site=gov.uk
+$boost,site=gov.ie
+$boost,site=hse.ie
+$boost,site=hhs.gov
+$boost,site=nlm.nih.gov
+$boost,site=nih.gov
+$boost,site=canada.ca
+$boost,site=health.gov.au
+$boost,site=health.govt.nz
+$boost,site=tewhatuora.govt.nz
+!
+! ---- 3 Evidence, HTA and health system analysis ----
+$boost,site=cochrane.org
+$boost,site=jbi.global
+$boost,site=nice.org.uk
+$boost,site=cda-amc.ca
+$boost,site=cadth.ca
+$boost,site=ahrq.gov
+$boost,site=hiqa.ie
+$boost,site=campbellcollaboration.org
+$boost,site=kingsfund.org.uk
+$boost,site=nuffieldtrust.org.uk
+$boost,site=health.org.uk
+$boost,site=commonwealthfund.org
+!
+! ---- 4 Commercial suppliers - VENDOR-STATED SIGNAL, never a finding ----
+$boost,site=oclc.org
+$boost,site=clarivate.com
+$boost,site=ebsco.com
+$boost,site=about.ebsco.com
+$boost,site=proquest.com
+$boost,site=about.proquest.com
+$boost,site=elsevier.com
+$boost,site=springernature.com
+$boost,site=wiley.com
+$boost,site=taylorandfrancisgroup.com
+$boost,site=sagepub.com
+$boost,site=oup.com
+$boost,site=exlibrisgroup.com
+$boost,site=springshare.com
+$boost,site=openathens.net
+!
