@@ -1,5 +1,5 @@
 {
-  "name": "mcp-health-lib-bodies",
+  "name": "mcp-health-external-drivers",
   "version": "2.1.0",
   "private": true,
   "type": "module",
